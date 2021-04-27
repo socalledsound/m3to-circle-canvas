@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { mouseReducer } from './mouseReducer/mouseReducer';
+import { mouseReducer } from './mouse/mouseReducer';
 // import { resizeCanvasReducer } from './resizeCanvas/resizeCanvas.reducer';
 // import { gearAnimationReducer } from './gearAnimationReducer/gearAnimation.reducer';
 // import { imageButtonsReducer } from './imageButtonReducer/imageButtons.reducer';
