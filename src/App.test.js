@@ -1,8 +1,30 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react';
+import { mount } from 'enzyme'
+import RootProvider from './RootProvider'
+import App from './App'
+import IntroModal from './components/IntroModal';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+const RP = () => {
+    return (
+        <RootProvider>
+            <App />
+        </RootProvider>
+    )
+}
+
+
+let app
+beforeEach(() => {
+    app = mount(<RP />)
+})
+
+afterEach(() => {
+    app.unmount()
+})
+
+it('has a header', () => {
+    
+    expect(app.find(IntroModal).length).toEqual(1)
+
+})
